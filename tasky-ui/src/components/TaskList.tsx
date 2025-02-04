@@ -8,7 +8,7 @@ const ToDoList = () => {
 
   if (!tasks || tasks.length === 0) {
     return (
-      <Typography variant="h6" component="h4" gutterBottom>
+      <Typography variant="h6" component="h3" gutterBottom>
         No tasks yet.
       </Typography>
     );
@@ -16,7 +16,7 @@ const ToDoList = () => {
 
   return (
     <div>
-      <Typography variant="h5" component="h4" gutterBottom>
+      <Typography variant="h5" component="h3" gutterBottom>
         Tasks
       </Typography>
       <List>

@@ -28,9 +28,9 @@ export const TaskForm = () => {
     createTask(task);
 
     // Clear form values
-    if (titleRef.current) titleRef.current.value = ''
-    if (descriptionRef.current) descriptionRef.current.value = ''
-    if (doneRef.current) doneRef.current.checked = false
+    if (titleRef.current) titleRef.current.value = "";
+    if (descriptionRef.current) descriptionRef.current.value = "";
+    if (doneRef.current) doneRef.current.checked = false;
   };
 
   return (
@@ -41,24 +41,44 @@ export const TaskForm = () => {
       <div>
         <form onSubmit={onSubmit}>
           <div style={{ padding: "10px" }}>
-            <TextField inputRef={titleRef} id="title" label="Title" required />
+            <TextField
+              inputRef={titleRef}
+              id="title"
+              label="Title"
+              required
+              inputProps={{
+                "data-testid": "taskform-title",
+              }}
+            />
           </div>
           <div style={{ padding: "10px" }}>
             <TextField
               inputRef={descriptionRef}
-              multiline              
+              multiline
               minRows={2}
               id="description"
               label="Description"
+              inputProps={{
+                "data-testid": "taskform-description",
+              }}
               required
             />
           </div>
           <div>
             <FormControlLabel
-              control={<Switch inputRef={doneRef} id="done" />}
+              control={
+                <Switch
+                  inputRef={doneRef}
+                  id="done"
+                />
+              }
               label="Done"
             />
-            <Button type="submit" variant="contained">
+            <Button
+              type="submit"
+              variant="contained"
+              data-testid="taskform-submit"
+            >
               Add Task
             </Button>
           </div>
